@@ -443,3 +443,62 @@ script
 </body>
 
 </html>
+<body onload='document frm.tx.focus()'>
+
+<div>
+
+<h2>Input an email and Submit</h2>
+
+<form name="frm" action="#">
+
+<ul>
+
+<li><input type='text' name='tx'/></li>
+
+<li>
+
+<input type="submit" name="sub"
+
+value="Submit"
+
+onclick="validateEmail(document.frm.tx)"
+
+/>
+
+</li>
+
+</ul>
+
+</form>
+
+</div>
+
+<script src="email-validation.js"></script>
+
+<script>
+
+// 'email-validation.js' file
+
+function validateEmail(inputText){
+
+var mailformat=/^\w+([\.)?\w+)*@\w+([\.)?\w+)*(\\w{(2,3})+$/;
+
+if(inputText.value.match(mailformat)){
+
+alert("Valid email address!");
+
+document.form1.text1.focus();
+
+return true;
+
+}else{
+
+alert("You have entered an invalid email address!"); document.form1.text1.focus();
+
+return false;
+
+}
+
+}
+
+</script>
