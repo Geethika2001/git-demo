@@ -502,3 +502,80 @@ return false;
 }
 
 </script>
+
+
+New things
+<script>
+    // Javascript program to print all permutations of a
+    // given string.
+    let arr=[];
+    
+    function permute(str, l, r)
+    {
+        if (l == r)
+                arr.push(str);//document.write(str+"<br>");
+            else
+            {
+                for (let i = l; i <= r; i++)
+                {
+                    str = swap(str, l, i);
+                    permute(str, l + 1, r);
+                    str = swap(str, l, i);
+                }
+            }
+    }
+    function swap(a, i, j)
+    {
+    let temp;
+    let charArray = a.split("");
+    temp = charArray[i] ;
+    charArray[i] = charArray[j];
+    charArray[j] = temp;
+    return (charArray).join("");
+    }
+ 
+let str = prompt("enter the string");
+let n = str.length;
+permute(str, 0, n-1);
+
+
+function reverse( str )
+  {
+    // variable holds reverse string
+    let rev_str = "";
+    for( let i = str.length-1 ;i >= 0 ;i--)
+    {
+      rev_str+= str[i];
+    }
+    // return reverse string
+    return rev_str;
+  }
+ 
+  //  function checking string is palindrome or not
+  function is_palindrome( str )
+  {
+    reverse_str = reverse(str);
+    //  condition checking if reverse str is
+    // same as string it is palindrome
+    // else not a palindrome
+    if( reverse_str === str)
+    {
+      
+      return true;//document.write("passed string is palindrome ");
+    }
+    else
+    {
+       return false;//document.write("passed string is not palindrome");
+    }
+      }
+
+
+  for(let i=0;i<arr.length;i++){
+      if(is_palindrome(arr[i])){
+        document.write("passed string is palindrome ");
+        break ;
+      }
+      
+}
+
+</script>
